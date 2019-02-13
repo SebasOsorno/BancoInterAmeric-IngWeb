@@ -7,14 +7,11 @@
     </div>
   </div>
   <router-outlet></router-outlet>
-
   <ul>
     <li class="text" *ngFor="let usuario of usuarios | async">
-      {{usuario.nombre}}
+      {{usuario.nombre}} 
     </li>
   </ul>
-
-
 </div>
 
 

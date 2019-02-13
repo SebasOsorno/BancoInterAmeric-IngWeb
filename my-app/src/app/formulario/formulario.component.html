@@ -8,7 +8,8 @@
 
     <label for="validationCustom01">Nombre</label>
     <input type="text" class="form-control" name="name" 
-    id="validationCustom01" placeholder="Nombre" required    
+    id="validationCustom01" placeholder="Nombre" required  
+    [(ngModel)]="user.nombre"  
     >
   
     <div class="valid-feedback">
@@ -26,7 +27,6 @@
 
   </div>
   <div class="form-row mt-3">
-
     <label for="validationCustomUsername">Nombre de Usuario</label>
     <div class="input-group">
       <div class="input-group-prepend">
@@ -121,12 +121,3 @@
     }, false);
   })();
 </script>
-
-<form (ngSubmit)="agregarUsuario()">
-  <input 
-  type="text" placeholder="Ingrese su nombre" 
-  name="name" class="form-control"
-  [(ngModel)]="user.name"
-  >
-  <button class="btn btn-warning mt-3" type="submit">Agregar</button>
-</form>
