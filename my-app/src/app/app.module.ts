@@ -12,6 +12,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { CodeAuthenticationComponent } from './code-authentication/code-authentication.component';
 
 const routes: Routes = [
   // {path: 'miRuta', component: }
@@ -19,7 +20,9 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    FormularioComponent
+    FormularioComponent,
+    CodeAuthenticationComponent
+
   ],
   imports: [
     BrowserModule,
@@ -34,4 +37,4 @@ const routes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { };
