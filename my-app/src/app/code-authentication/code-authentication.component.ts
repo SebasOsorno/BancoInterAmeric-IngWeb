@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import {auth} from 'firebase/app';
-import { from } from 'rxjs';
 import { WindowService } from '../services/window.service';
 
 
@@ -33,44 +32,62 @@ export class CodeAuthenticationComponent implements OnInit {
   verificationCode: string;
 
   user: any;
-  constructor(public afAuth:AngularFireAuth,private window:WindowService) {
-
-    auth().languageCode='ES';
-  
+  constructor(private window:WindowService, private afAuth: AngularFireAuth) {
+    auth().languageCode='ES';     
    }
    
    
   ngOnInit() {
     this.windowRef = this.window.windowRef
     this.windowRef.recaptchaVerifier = new auth.RecaptchaVerifier('recaptcha-container')
-
     this.windowRef.recaptchaVerifier.render()
+
+
+//////////////////////////////////////////////////////
+   
+    auth().onAuthStateChanged(firebaseUser => {
+      if (firebaseUser) {
+          console.log("Usuario logueado");
+
+      } else {
+          console.log('no logueado'); 
+      }
+  });
+
+  auth().signInWithCustomToken
+////////////////////////////////////
+
   }
+  
   sendLoginCode() {
-
     const appVerifier = this.windowRef.recaptchaVerifier;
-
     const num = this.phoneNumber.e164;
 
     auth().signInWithPhoneNumber(num, appVerifier)
             .then(result => {
-
                 this.windowRef.confirmationResult = result;
-
             })
-            .catch( error => console.log(error) );
-
-  }
+            .catch( error => console.log(error));         
+          
+          }
 
   verifyLoginCode() {
     this.windowRef.confirmationResult
                   .confirm(this.verificationCode)
                   .then( result => {
-
                     this.user = result.user;
 
     })
-    .catch( error => console.log(error, "Incorrect code entered?"));
+    .catch( error => console.log(error, "Incorrect code entered?")); 
   }
+
+  signOut(){
+    auth().signOut().then(function() {
+      // Sign-out successful.
+    }).catch(function(error) {
+      // An error happened.
+    });
+  }
+
 
 }
