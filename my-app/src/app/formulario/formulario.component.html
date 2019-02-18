@@ -7,11 +7,9 @@
   <div class="form-row mt-3">
 
     <label for="validationCustom01">Nombre</label>
-    <input type="text" class="form-control" name="name" 
-    id="validationCustom01" placeholder="Nombre" required  
-    [(ngModel)]="user.nombre"  
-    >
-  
+    <input type="text" class="form-control" name="name" id="validationCustom01" placeholder="Nombre" required
+      [(ngModel)]="user.nombre">
+
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -20,7 +18,8 @@
   <div class="form-row mt-3">
 
     <label for="validationCustom02">Cedula</label>
-    <input type="text" class="form-control" id="validationCustom02" placeholder="Cedula" required>
+    <input type="text" class="form-control" name="name" id="validationCustom02" placeholder="Cedula" required
+      [(ngModel)]="user.cedula">
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -32,8 +31,8 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroupPrepend">@</span>
       </div>
-      <input type="text" class="form-control" id="validationCustomUsername" placeholder="Nombre de Usuario"
-        aria-describedby="inputGroupPrepend" required>
+      <input type="text" class="form-control" name="name" id="validationCustomUsername" placeholder="Nombre de Usuario"
+        aria-describedby="inputGroupPrepend" required [(ngModel)]="user.usuario">
       <div class="invalid-feedback">
         Please choose a username.
       </div>
@@ -44,7 +43,8 @@
   <div class="form-row mt-3">
 
     <label for="validationCustom03">Telefono Celular</label>
-    <input type="text" class="form-control" id="validationCustom03" placeholder="Telefono Celular" required>
+    <input type="text" class="form-control" name="name" id="validationCustom03" placeholder="Telefono Celular" required
+      [(ngModel)]="user.cel">
     <div class="invalid-feedback">
       Please provide a valid city.
     </div>
@@ -53,8 +53,8 @@
   <div class="form-row mt-3">
 
     <label for="validationCustom04">Fecha Expedicion de la Cedula</label>
-    <input type="text" class="form-control" id="validationCustom04" placeholder="Fecha de expedicion de la cedula"
-      required>
+    <input type="text" class="form-control" name="name" id="validationCustom04" placeholder="Fecha de expedicion de la cedula"
+      required [(ngModel)]="user.dateCedula">
     <div class="invalid-feedback">
       Please provide a valid state.
     </div>
@@ -62,16 +62,18 @@
   <div class="form-row mt-3">
 
     <label for="validationCustom05">Dirección</label>
-    <input type="text" class="form-control" id="validationCustom05" placeholder="Dirección" required>
+    <input type="text" class="form-control" name="name" id="validationCustom05" placeholder="Dirección" required
+      [(ngModel)]="user.direccion">
     <div class="invalid-feedback">
-      Please provide a valid zip.
+      Please provide a valid dirección.
     </div>
 
   </div>
   <div class="form-row mt-3">
 
     <label for="validationCustom06"> Lugar de residencia</label>
-    <input type="text" class="form-control" id="validationCustom05" placeholder="Lugar de residencia" required>
+    <input type="text" class="form-control" name="name" id="validationCustom05" placeholder="Lugar de residencia" required
+      [(ngModel)]="user.residencia">
     <div class="invalid-feedback">
       Please provide a valid zip.
     </div>
@@ -80,7 +82,8 @@
   <div class="form-row mt-3">
 
     <label for="validationCustom07">Contraseña</label>
-    <input type="text" class="form-control" id="validationCustom05" placeholder="Contraseña" required>
+    <input type="password" class="form-control" name="name" id="validationCustom05" placeholder="Contraseña" required
+      [(ngModel)]="user.pass">
     <div class="invalid-feedback">
       Please provide a valid Contraseña.
     </div>

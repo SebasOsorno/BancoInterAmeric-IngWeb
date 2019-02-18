@@ -13,7 +13,6 @@ export class FormularioComponent implements OnInit {
   user: any = {
     nombre: '',
     usuario: '',
-    email: '',
     pass: '',
     cel: '',
     cedula: '',
@@ -34,7 +33,6 @@ export class FormularioComponent implements OnInit {
     this.conexion.agregarUsuario(this.user);
     this.user.nombre = '';
     this.user.usuario = '';
-    this.user.email = '';
     this.user.pass = '';
     this.user.cel = '';
     this.user.cedula = '';
