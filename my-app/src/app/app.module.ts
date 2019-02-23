@@ -13,6 +13,9 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { CodeAuthenticationComponent } from './code-authentication/code-authentication.component';
+import { RetiroComponent } from './retiro/retiro.component';
+import { ConsignacionComponent } from './consignacion/consignacion.component';
+import { TransferenciasComponent } from './transferencias/transferencias.component';
 
 const routes: Routes = [
   // {path: 'miRuta', component: }
@@ -21,7 +24,10 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     FormularioComponent,
-    CodeAuthenticationComponent
+    CodeAuthenticationComponent,
+    RetiroComponent,
+    ConsignacionComponent,
+    TransferenciasComponent
 
   ],
   imports: [
