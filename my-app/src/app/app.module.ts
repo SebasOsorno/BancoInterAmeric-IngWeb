@@ -16,6 +16,8 @@ import { CodeAuthenticationComponent } from './code-authentication/code-authenti
 import { RetiroComponent } from './retiro/retiro.component';
 import { ConsignacionComponent } from './consignacion/consignacion.component';
 import { TransferenciasComponent } from './transferencias/transferencias.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 const routes: Routes = [
   // {path: 'miRuta', component: }
@@ -27,7 +29,9 @@ const routes: Routes = [
     CodeAuthenticationComponent,
     RetiroComponent,
     ConsignacionComponent,
-    TransferenciasComponent
+    TransferenciasComponent,
+    UserDetailsComponent,
+    ToolbarComponent
 
   ],
   imports: [
@@ -43,4 +47,4 @@ const routes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { };
+export class AppModule { }

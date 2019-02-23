@@ -9,7 +9,7 @@
 
     <div id="recaptcha-container"></div>
 
-    <button (click)="sendLoginCode()">SMS Text Login Code</button>
+    <button (click)="sendLoginCode()" [routerLink]="['/usuario']">SMS Text Login Code</button>
 
     <div *ngIf="windowRef.confirmationResult">
         <hr>
@@ -18,7 +18,5 @@
 
         <button (click)="verifyLoginCode()">Verify</button>
     </div>
-  
-
 </div>
 <button (click)="signOut()">Sing Out</button>
