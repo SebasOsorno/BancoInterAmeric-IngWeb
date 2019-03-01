@@ -21,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarComponent } from './mat-toolbar/mat-toolbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { HttpClientModule} from '@angular/common/http';
 
 const routes: Routes = [
   // {path: 'miRuta', component: }
@@ -34,7 +35,7 @@ const routes: Routes = [
     ConsignacionComponent,
     TransferenciasComponent,
     UserDetailsComponent,
-    MatToolbarComponent
+    MatToolbarComponent,
 
   ],
   imports: [
@@ -52,7 +53,8 @@ const routes: Routes = [
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
