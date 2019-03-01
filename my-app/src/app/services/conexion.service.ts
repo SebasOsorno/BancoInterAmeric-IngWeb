@@ -4,14 +4,14 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export interface Usuario {
-  nombre:string,    
-  usuario:string,  
-  pass:string,    
-  cel:string,    
-  cedula:string,    
-  dateCedula:string,      
-  residencia:string,    
-  direccion:string
+  nombre: string;
+  usuario: string;
+  pass: string;
+  cel: string;
+  cedula: string;
+  dateCedula: string;
+  residencia: string;
+  direccion: string;
 }
 
 @Injectable({
@@ -23,7 +23,7 @@ export class ConexionService {
 
   private usuarioDoc: AngularFirestoreDocument<Usuario>;
 
-  constructor(private afs: AngularFirestore) { 
+  constructor(private afs: AngularFirestore) {
     this.usuariosCollection = afs.collection<Usuario>('usuarios');
     this.usuarios = this.usuariosCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {

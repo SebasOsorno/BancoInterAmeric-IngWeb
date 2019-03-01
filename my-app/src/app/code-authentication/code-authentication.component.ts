@@ -13,7 +13,7 @@ export class PhoneNumber {
   // format phone numbers as E.164
   get e164() {
     const num = this.country + this.area + this.prefix + this.line
-    return `+${num}`
+    return `+${num}`;
   }
 
 }
@@ -27,30 +27,30 @@ export class CodeAuthenticationComponent implements OnInit {
 
   windowRef: any;
 
-  phoneNumber = new PhoneNumber()
+  phoneNumber = new PhoneNumber();
 
   verificationCode: string;
 
   user: any;
-  constructor(private window:WindowService, private afAuth: AngularFireAuth) {
-    auth().languageCode='ES';     
+  constructor(private window: WindowService, private afAuth: AngularFireAuth) {
+    auth().languageCode = 'ES';
    }
    
    
   ngOnInit() {
-    this.windowRef = this.window.windowRef
-    this.windowRef.recaptchaVerifier = new auth.RecaptchaVerifier('recaptcha-container')
-    this.windowRef.recaptchaVerifier.render()
+    this.windowRef = this.window.windowRef;
+    this.windowRef.recaptchaVerifier = new auth.RecaptchaVerifier('recaptcha-container');
+    this.windowRef.recaptchaVerifier.render();
 
 
 //////////////////////////////////////////////////////
    
     auth().onAuthStateChanged(firebaseUser => {
       if (firebaseUser) {
-          console.log("Usuario logueado");
+          console.log('Usuario logueado');
 
       } else {
-          console.log('no logueado'); 
+          console.log('no logueado');
       }
   });
 
@@ -67,7 +67,7 @@ export class CodeAuthenticationComponent implements OnInit {
             .then(result => {
                 this.windowRef.confirmationResult = result;
             })
-            .catch( error => console.log(error));         
+            .catch( error => console.log(error));
           
           }
 

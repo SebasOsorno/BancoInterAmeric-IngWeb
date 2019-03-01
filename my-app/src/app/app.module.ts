@@ -17,7 +17,10 @@ import { RetiroComponent } from './retiro/retiro.component';
 import { ConsignacionComponent } from './consignacion/consignacion.component';
 import { TransferenciasComponent } from './transferencias/transferencias.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarComponent } from './mat-toolbar/mat-toolbar.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 const routes: Routes = [
   // {path: 'miRuta', component: }
@@ -31,7 +34,7 @@ const routes: Routes = [
     ConsignacionComponent,
     TransferenciasComponent,
     UserDetailsComponent,
-    ToolbarComponent
+    MatToolbarComponent
 
   ],
   imports: [
@@ -42,7 +45,14 @@ const routes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule // imports firebase/storage only needed for storage features
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

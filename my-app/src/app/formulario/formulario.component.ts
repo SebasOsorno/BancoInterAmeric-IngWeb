@@ -19,17 +19,17 @@ export class FormularioComponent implements OnInit {
     dateCedula: '',
     residencia: '',
     direccion: ''
-  }
-  constructor(private conexion: ConexionService) { 
-    this.conexion.listaUsuario().subscribe(usuario =>{
+  };
+  constructor(private conexion: ConexionService) {
+    this.conexion.listaUsuario().subscribe(usuario => {
       this.usuarios = usuario;
       console.log(this.usuarios);
-    })
+    });
   }
 
   ngOnInit() {
   }
-  agregarUsuario(){
+  agregarUsuario() {
     this.conexion.agregarUsuario(this.user);
     this.user.nombre = '';
     this.user.usuario = '';
