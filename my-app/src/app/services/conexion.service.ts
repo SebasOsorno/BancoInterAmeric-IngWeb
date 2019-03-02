@@ -38,19 +38,69 @@ export class ConexionService {
 
     );
 
-    var Paises= ['Colombia','Peru','EU']
+    var Paises= ['Colombia','Mexico','EU','Chile','Brasil','Ecuador','Bolivia','Uruguay']
       var eleccion: string=""
-    if(eleccion=== "Colombia"){
-      pais={
+      var pais={
         siglas:"COP",
         nombre: "Colombia"
       }
-    }else{}
+    if(eleccion=== 'Colombia'){
+     var pais={
+        siglas:"COP",
+        nombre: "Colombia"
+      }
+    }else if(eleccion==='Mexico'){
 
-    var pais={
-      siglas:"COP",
-      nombre: "Colombia"
+      var pais={
+        siglas:"MXN",
+        nombre: "Mexico"
+      }
+      
+    }else if(eleccion==='EU'){
+
+      pais={
+        siglas:"USD",
+        nombre: "EStadosUnidos"
+      }
+
+    }else if (eleccion==='Chile'){
+
+      pais={
+        siglas:"CLP",
+        nombre: "Chile"
+      }
+
+    }else if (eleccion==='Brasil'){
+
+      pais={
+        siglas:"BRL",
+        nombre: "Brasil"
+      }
+
+    }else if(eleccion==='Ecuador'){
+
+      pais={
+        siglas:"ECS",
+        nombre: "Ecuador"
+      }
+
+    }else if(eleccion==='Bolivia'){
+
+      pais={
+        siglas:"BOB",
+        nombre: "Bolivia"
+      }
+
+    }else if(eleccion==='Uruguay'){
+
+      pais={
+        siglas:"UYU",
+        nombre: "Uruguay"
+      }
+
     }
+
+    
 
     this.URI = `https://free.currencyconverterapi.com/api/v6/convert?compact=ultra&apiKey=8137278e08fdd26d497d&q=USD_${pais.siglas}`
     console.log(this.URI);
