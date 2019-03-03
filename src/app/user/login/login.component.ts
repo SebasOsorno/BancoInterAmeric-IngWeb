@@ -9,34 +9,48 @@ import { ConexionService } from 'src/app/services/conexion.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor(public afAuth: AngularFireAuth, private Conexion:ConexionService) { }
   public usuario: string ='';
   public password: string ='';
+  public userExist: boolean= false;
+  constructor(public afAuth: AngularFireAuth, private Conexion:ConexionService) {
+
+   }
+
   ngOnInit() {
+
   }
   onLogOut(){
     this.afAuth.auth.signOut();
   }
   usuarios:any;
 
-  validarUsuario(user,pass){
-    user=this.usuario;
-    pass=this.password;
+  validarUsuario(){
+    
     var b= false;
+
     this.Conexion.listaUsuario().subscribe(usuario2 => {
-    this.usuarios= usuario2;
+
+    this.usuarios = usuario2;
+
     this.usuarios.forEach(userf => {
-      if(userf.usuario==user && userf.pass==pass){
-        b = true;              
+      if(userf.usuario==this.usuario && userf.pass==this.password){
+        this.userExist = true;
+        console.log('usuario exite. digite el codigo de verificación') 
       }
     });
-    if(b){
+
+    if(this.userExist){
       alert("Inició sesión");
     }
     else{
       alert("Usuario y/o contraseña incorrecta");
     }
+
+
+
   })  
+
+
+
   }
 }

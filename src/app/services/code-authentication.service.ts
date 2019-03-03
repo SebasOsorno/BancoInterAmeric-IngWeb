@@ -41,8 +41,8 @@ export class CodeAuthenticationService {
     .catch(error => console.log(error));
   }
 
-   verifyLoginCode(user) {
-     var Uid;
+   verifyLoginCode(User) {
+    
     this.windowRef.confirmationResult
                   .confirm(this.verificationCode)
                   .then( result => {
@@ -52,8 +52,18 @@ export class CodeAuthenticationService {
                     
                     
     }).then(()=>{
-      user.uID = auth().currentUser.uid;
-      this.conexion.agregarUsuario(user);
+      User.uid = auth().currentUser.uid;
+      this.conexion.agregarUsuario(User);
+      console.log('se agrega');
+      User.nombre = '';
+    User.usuario = '';
+    User.pass = '';
+    User.cel = '';
+    User.cedula = '';
+    User.dateCedula = '';
+    User.residencia = '';
+    User.direccion = '';
+    User.uID='';
     })
     .catch( error => console.log(error, "Incorrect code entered?")); 
    

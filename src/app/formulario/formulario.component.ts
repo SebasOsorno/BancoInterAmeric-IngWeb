@@ -47,22 +47,8 @@ export class FormularioComponent implements OnInit {
   }
 
   verifyLoginCode(){
-
-    this.phoneCode.verificationCode =this.verificationCode;
-    this.phoneCode.verifyLoginCode(this.user)
-    
-    this.user.nombre = '';
-    this.user.usuario = '';
-    this.user.pass = '';
-    this.user.cel = '';
-    this.user.cedula = '';
-    this.user.dateCedula = '';
-    this.user.residencia = '';
-    this.user.direccion = '';
-    this.user.uID='';
-  
-    
-    
+    this.phoneCode.verificationCode = this.verificationCode;
+    this.phoneCode.verifyLoginCode(this.user)   
 
   }
   signOut(){
