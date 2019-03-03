@@ -7,6 +7,7 @@ import { RetiroComponent } from './retiro/retiro.component';
 import { ConsignacionComponent } from './consignacion/consignacion.component';
 import { TransferenciasComponent } from './transferencias/transferencias.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { AdminViewComponent } from './admin-view/admin-view.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/registro', pathMatch: 'full' },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'phone-auth', component: CodeAuthenticationComponent },
   { path: 'retiro', component: RetiroComponent },
   { path: 'consignacion', component: ConsignacionComponent },
-  { path: 'transferencias', component: TransferenciasComponent }
+  { path: 'transferencias', component: TransferenciasComponent },
+  { path: 'admin', component: AdminViewComponent}
 ];
 
 @NgModule({

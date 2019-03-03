@@ -24,6 +24,7 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
+import { AdminViewComponent } from './admin-view/admin-view.component';
 
 const routes: Routes = [
   // {path: 'miRuta', component: }
@@ -40,6 +41,7 @@ const routes: Routes = [
     MatToolbarComponent,
     LoginComponent,
     RegisterComponent,
+    AdminViewComponent,
 
   ],
   imports: [
