@@ -49,18 +49,7 @@ verfyLogin(User){
     console.log();
 
 
-  }).then(() => {
-    User.uid = auth().currentUser.uid;    
-    console.log('se agrega');
-    User.nombre = '';
-    User.usuario = '';
-    User.pass = '';
-    User.cel = '';
-    User.cedula = '';
-    User.dateCedula = '';
-    User.residencia = '';
-    User.direccion = '';
-    User.uID = '';
+
   })
   .catch(error => console.log(error, "Incorrect code entered?"));
 
@@ -79,15 +68,15 @@ verfyLogin(User){
         User.uid = auth().currentUser.uid;
         this.conexion.agregarUsuario(User);
         console.log('se agrega');
-        User.nombre = '';
-        User.usuario = '';
-        User.pass = '';
-        User.cel = '';
-        User.cedula = '';
-        User.dateCedula = '';
-        User.residencia = '';
-        User.direccion = '';
-        User.uID = '';
+        // User.nombre = '';
+        // User.usuario = '';
+        // User.pass = '';
+        // User.cel = '';
+        // User.cedula = '';
+        // User.dateCedula = '';
+        // User.residencia = '';
+        // User.direccion = '';
+        // User.uID = '';
       })
       .catch(error => console.log(error, "Incorrect code entered?"));
 
