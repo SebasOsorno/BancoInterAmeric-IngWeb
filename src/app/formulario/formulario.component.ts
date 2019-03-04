@@ -49,7 +49,6 @@ export class FormularioComponent implements OnInit {
   verifyLoginCode(){
     this.phoneCode.verificationCode = this.verificationCode;
     this.phoneCode.verifyLoginCode(this.user)   
-
   }
   signOut(){
     this.phoneCode.signOut();

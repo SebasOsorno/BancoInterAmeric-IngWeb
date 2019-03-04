@@ -17,9 +17,7 @@
                                     <input [(ngModel)]="password" type="password" id="password" name="password" class="form-control" placeholder="Password" required>
                                 </div>
                                 <button type="submit" class="btn btn-lg btn-primary btn-block">Continuar</button>
-                                <form action="" (ngSubmit)="validarUsuario()">
-                                </form>
-
+                               
                                 <div class="form-group">
                                     <a routerLink="/register" class="form-control login-user">No tienes cuenta ?</a>
                                 </div>
@@ -31,13 +29,13 @@
         </div>
 
 
-
+        <div id="recaptcha-container"></div>
         <div *ngIf="userExist">
             <hr>
             <label for="code">Ingrese código de verificación</label><br>
             <input type="text" name="code" [(ngModel)]="verificationCode">
             <button (click)="verifyLoginCode()">Verify</button>
-            <div id="recaptcha-container"></div>
+           
         </div>
 
 
