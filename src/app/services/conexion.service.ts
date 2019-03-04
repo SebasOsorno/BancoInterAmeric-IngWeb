@@ -69,6 +69,54 @@ export class ConexionService {
       {
         nombre: 'Uruguay',
         sigla: 'UYU'
+      },
+      {
+        nombre: 'Argentina',
+        sigla: 'ARS'
+      },
+      {
+        nombre: 'CostaRica',
+        sigla: 'CRC'
+      },
+      {
+        nombre: 'Cuba',
+        sigla: 'CUP'
+      },
+      {
+        nombre: 'ElSalvador',
+        sigla: 'SVC'
+      },
+      {
+        nombre: 'Guatemala',
+        sigla: 'GTQ'
+      },
+      {
+        nombre: 'Honduras',
+        sigla: 'HNL'
+      },
+      {
+        nombre: 'Nicaragua',
+        sigla: 'NIO'
+      },
+      {
+        nombre: 'Panama',
+        sigla: 'PAB'
+      },
+      {
+        nombre: 'Paraguay',
+        sigla: 'PYG'
+      },
+      {
+        nombre: 'Peru',
+        sigla: 'PEN'
+      },
+      {
+        nombre: 'RepublicaDominicana',
+        sigla: 'DOP'
+      },
+      {
+        nombre: 'venezuela',
+        sigla: 'VES'
       }
     ]
     

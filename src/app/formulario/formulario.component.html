@@ -7,8 +7,7 @@
     <div class="form-row mt-3">
 
         <label for="validationCustom01">Nombre</label>
-        <input type="text" class="form-control" name="name" id="validationCustom01" placeholder="Nombre" required
-            [(ngModel)]="user.nombre">
+        <input type="text" class="form-control" name="name" id="validationCustom01" placeholder="Nombre" required [(ngModel)]="user.nombre">
 
         <div class="valid-feedback">
             Looks good!
@@ -18,8 +17,7 @@
     <div class="form-row mt-3">
 
         <label for="validationCustom02">Cedula</label>
-        <input type="text" class="form-control" name="name" id="validationCustom02" placeholder="Cedula" required
-            [(ngModel)]="user.cedula">
+        <input type="text" class="form-control" name="name" id="validationCustom02" placeholder="Cedula" required [(ngModel)]="user.cedula">
         <div class="valid-feedback">
             Looks good!
         </div>
@@ -31,9 +29,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroupPrepend">@</span>
             </div>
-            <input type="text" class="form-control" name="name" id="validationCustomUsername"
-                placeholder="Nombre de Usuario" aria-describedby="inputGroupPrepend" required
-                [(ngModel)]="user.usuario">
+            <input type="text" class="form-control" name="name" id="validationCustomUsername" placeholder="Nombre de Usuario" aria-describedby="inputGroupPrepend" required [(ngModel)]="user.usuario">
             <div class="invalid-feedback">
                 Please choose a username.
             </div>
@@ -44,8 +40,7 @@
     <div class="form-row mt-3">
 
         <label for="validationCustom03">Telefono Celular</label>
-        <input type="text" class="form-control" name="name" id="validationCustom03" placeholder="Telefono Celular"
-            required [(ngModel)]="user.cel">
+        <input type="text" class="form-control" name="name" id="validationCustom03" placeholder="Telefono Celular" required [(ngModel)]="user.cel">
         <div class="invalid-feedback">
             Please provide a valid city.
         </div>
@@ -54,8 +49,7 @@
     <div class="form-row mt-3">
 
         <label for="validationCustom04">Fecha Expedicion de la Cedula</label>
-        <input type="text" class="form-control" name="name" id="validationCustom04"
-            placeholder="Fecha de expedicion de la cedula" required [(ngModel)]="user.dateCedula">
+        <input type="text" class="form-control" name="name" id="validationCustom04" placeholder="Fecha de expedicion de la cedula" required [(ngModel)]="user.dateCedula">
         <div class="invalid-feedback">
             Please provide a valid state.
         </div>
@@ -63,8 +57,7 @@
     <div class="form-row mt-3">
 
         <label for="validationCustom05">Dirección</label>
-        <input type="text" class="form-control" name="name" id="validationCustom05" placeholder="Dirección" required
-            [(ngModel)]="user.direccion">
+        <input type="text" class="form-control" name="name" id="validationCustom05" placeholder="Dirección" required [(ngModel)]="user.direccion">
         <div class="invalid-feedback">
             Please provide a valid dirección.
         </div>
@@ -73,8 +66,7 @@
     <div class="form-row mt-3">
 
         <label for="validationCustom06"> Lugar de residencia</label>
-        <input type="text" class="form-control" name="name" id="validationCustom05" placeholder="Lugar de residencia"
-            required [(ngModel)]="user.residencia">
+        <input type="text" class="form-control" name="name" id="validationCustom05" placeholder="Lugar de residencia" required [(ngModel)]="user.residencia">
         <div class="invalid-feedback">
             Please provide a valid zip.
         </div>
@@ -92,13 +84,24 @@
             <option>Ecuador</option>
             <option>Bolivia</option>
             <option>Uruguay</option>
+            <option>Argentina</option>
+            <option>CostaRica</option>
+            <option>Cuba</option>
+            <option>ElSalvador</option>
+            <option>Guatemala</option>
+            <option>Honduras</option>
+            <option>Nicaragua</option>
+            <option>Panama</option>
+            <option>Paraguay</option>
+            <option>Peru</option>
+            <option>RepublicaDominicana</option>
+            <option>Venazuela</option>
         </select>
     </div>
     <div class="form-row mt-3">
 
         <label for="validationCustom07">Contraseña</label>
-        <input type="password" class="form-control" name="name" id="validationCustom05" placeholder="Contraseña"
-            required [(ngModel)]="user.pass">
+        <input type="password" class="form-control" name="name" id="validationCustom05" placeholder="Contraseña" required [(ngModel)]="user.pass">
         <div class="invalid-feedback">
             Please provide a valid Contraseña.
         </div>
@@ -144,14 +147,14 @@
 
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function () {
+    (function() {
         'use strict';
-        window.addEventListener('load', function () {
+        window.addEventListener('load', function() {
             // Fetch all the forms we want to apply custom Bootstrap validation styles to
             var forms = document.getElementsByClassName('needs-validation');
             // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function (form) {
-                form.addEventListener('submit', function (event) {
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
                     if (form.checkValidity() === false) {
                         event.preventDefault();
                         event.stopPropagation();
