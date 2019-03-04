@@ -8,6 +8,6 @@
     <span class="fill-space"></span>
     <a *ngIf=userAdmin mat-button [routerLink]="['/admin']">Vista Admin</a>
     <a mat-button [routerLink]="['/login']">login</a>
-    <a mat-button [routerLink]="['']">Cerrar Sesión</a>
+    <a mat-button (click)=signOut() >Cerrar Sesión</a>
 </mat-toolbar>
 <ng-content></ng-content>

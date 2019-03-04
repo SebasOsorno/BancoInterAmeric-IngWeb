@@ -22,19 +22,23 @@ export class MatToolbarComponent {
     .pipe(
       map(result => result.matches)
     );
+
   user;
   userAdmin = false;
   userLogin = false;
+
   constructor(private breakpointObserver: BreakpointObserver, public afAuth: AngularFireAuth,
     private fireStore: AngularFirestore) {
     this.afAuth.authState.subscribe(resp => {
-     
+      
+      
       if (resp) {
 
         this.userLogin = true;
         this.user = this.fireStore.collection("usuarios", ref =>
           ref.where("uid", "==", auth().currentUser.uid))
         this.user.valueChanges().subscribe(data => {
+          console.log(data);
           if (data.admin) {
             this.userAdmin = true;
           }
@@ -46,6 +50,18 @@ export class MatToolbarComponent {
 
 
 
+  }
+
+
+  signOut(){
+    auth().signOut().then(function() {
+      // Sign-out successful.
+      this.userAdmin = false;
+      this.userLogin = false;
+      alert("Cierre de sesión");
+    }).catch(function(error) {
+      // An error happened.
+    });
   }
 
 }

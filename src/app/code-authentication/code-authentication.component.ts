@@ -81,7 +81,7 @@ export class CodeAuthenticationComponent implements OnInit {
     .catch( error => console.log(error, "Incorrect code entered?")); 
   }
 
-  signOut(){
+  signOut(){ 
     auth().signOut().then(function() {
       // Sign-out successful.
     }).catch(function(error) {
