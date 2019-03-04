@@ -29,5 +29,21 @@
                 </div>
             </div>
         </div>
+
+
+       
+        <div *ngIf="userExist">
+            <hr>
+            <label for="code">Ingrese código de verificación</label><br>
+            <input type="text" name="code" [(ngModel)]="verificationCode">
+            <button (click)="verifyLoginCode()">Verify</button>
+            <div id="recaptcha-container"></div>
+        </div>
+
+
+
+
+
+
     </div>
 </section>

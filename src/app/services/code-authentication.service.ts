@@ -1,96 +1,84 @@
-import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { Injectable } from '@angular/core';
 import {auth} from 'firebase/app';
-import { WindowService } from '../services/window.service';
-
+import { AngularFireAuth } from '@angular/fire/auth';
+import { ConexionService } from './conexion.service';
 
 export class PhoneNumber {
   country: string;
-  area: string;
-  prefix: string;
-  line: string;
-
-  
-  
-
+  number: string;
   // format phone numbers as E.164
   get e164() {
-    const num = this.country 
+    const num = this.country + this.number
     return `+${num}`
   }
 
 }
-@Component({
-  selector: 'app-code-authentication',
-  templateUrl: './code-authentication.component.html',
-  styleUrls: ['./code-authentication.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class CodeAuthenticationComponent implements OnInit {
-
-
+export class CodeAuthenticationService {
+  
   windowRef: any;
 
-  phoneNumber = new PhoneNumber()
+  phoneNumber = new PhoneNumber();
 
   verificationCode: string;
-
   user: any;
-  constructor(private window:WindowService, private afAuth: AngularFireAuth) {
-    auth().languageCode='ES';     
-   }
-   
-   
-  ngOnInit() {
-    this.windowRef = this.window.windowRef
-    this.windowRef.recaptchaVerifier = new auth.RecaptchaVerifier('recaptcha-container')
-    this.windowRef.recaptchaVerifier.render()
-
-
-//////////////////////////////////////////////////////
-   
-    auth().onAuthStateChanged(firebaseUser => {
-      if (firebaseUser) {
-          console.log("Usuario logueado");
-
-      } else {
-          console.log('no logueado'); 
-      }
-  });
-
-  auth().signInWithCustomToken
-////////////////////////////////////
-
+  constructor(public afth: AngularFireAuth,private conexion: ConexionService) { 
+    auth().languageCode ='ES';
   }
-  
-  sendLoginCode() {
+
+  sendLoginCOde(){
     const appVerifier = this.windowRef.recaptchaVerifier;
     const num = this.phoneNumber.e164;
 
     auth().signInWithPhoneNumber(num, appVerifier)
-            .then(result => {
-                this.windowRef.confirmationResult = result;
-            })
-            .catch( error => console.log(error));         
-          
-          }
+    .then(result => {
+      this.windowRef.confirmationResult = result;
+       //.windowRef.confirmationResult se pone ngIf en el
+       // componente que consume este servicio
+    })
+    .catch(error => console.log(error));
+  }
 
-  verifyLoginCode() {
+   verifyLoginCode(User) {
+    
     this.windowRef.confirmationResult
                   .confirm(this.verificationCode)
                   .then( result => {
-                    this.user = result.user;
-
+                    this.user = true;
+                    console.log('verificado exitosamente')
+                    console.log();
+                    
+                    
+    }).then(()=>{
+      User.uid = auth().currentUser.uid;
+      this.conexion.agregarUsuario(User);
+      console.log('se agrega');
+      User.nombre = '';
+    User.usuario = '';
+    User.pass = '';
+    User.cel = '';
+    User.cedula = '';
+    User.dateCedula = '';
+    User.residencia = '';
+    User.direccion = '';
+    User.uID='';
     })
     .catch( error => console.log(error, "Incorrect code entered?")); 
+   
   }
 
   signOut(){
     auth().signOut().then(function() {
-      // Sign-out successful.
+      console.log('Sign-out successful.') 
     }).catch(function(error) {
       // An error happened.
     });
   }
+  getUId(){
+    return this.afth.auth.currentUser.uid
 
 
+  }
 }

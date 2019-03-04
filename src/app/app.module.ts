@@ -26,9 +26,19 @@ import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 
-const routes: Routes = [
-  // {path: 'miRuta', component: }
-];
+
+  const routes: Routes = [
+    { path: '', redirectTo: '/registro', pathMatch: 'full' },
+    { path: 'usuario', component: UserDetailsComponent},
+    { path: 'registro', component: FormularioComponent },
+    { path: 'phone-auth', component: CodeAuthenticationComponent },
+    { path: 'retiro', component: RetiroComponent },
+    { path: 'consignacion', component: ConsignacionComponent },
+    { path: 'transferencias', component: TransferenciasComponent },
+    {path:'user/login',component:LoginComponent},
+    {path:'user/register',component:RegisterComponent}
+  ];
+
 @NgModule({
   declarations: [
     AppComponent,
