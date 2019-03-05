@@ -1,9 +1,9 @@
 <div class="card mx-auto">
     <div class="card-body">
       <h5 class="card-title">Retiro</h5>
-      <input type="number" id="cantidadRetiro" placeholder="Cantidad">      
+      <input type="number" id="cantidadRetiro" placeholder="Cantidad" [(ngModel)]="valorRetirar">      
     </div>
     <div class="card-body">
-      <a href="#" class="btn btn-primary">Retirar</a>
+      <button (click)="realizarRetiro()">Retirar</button>
     </div>
 </div>

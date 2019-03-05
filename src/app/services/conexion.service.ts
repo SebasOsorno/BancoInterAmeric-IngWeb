@@ -144,4 +144,6 @@ export class ConexionService {
   agregarUsuario(usuario: Usuario) {
     this.usuariosCollection.add(usuario);
   }
+  actualizarUsuario(usuario:Usuario){   
+  }
 }

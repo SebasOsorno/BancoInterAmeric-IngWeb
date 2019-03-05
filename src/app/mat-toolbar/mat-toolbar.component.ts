@@ -37,6 +37,7 @@ export class MatToolbarComponent {
         this.userLogin = true;
         this.user = this.fireStore.collection("usuarios", ref =>
           ref.where("uid", "==", auth().currentUser.uid))
+          
         this.user.valueChanges().subscribe(data => {
           console.log(data);
           if (data.admin) {
