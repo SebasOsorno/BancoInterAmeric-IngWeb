@@ -10,7 +10,7 @@ import { CodeAuthenticationService } from '../services/code-authentication.servi
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
-
+  isError;
   usuarios: any;
 
   user: any = {
@@ -28,7 +28,7 @@ export class FormularioComponent implements OnInit {
   }
 
   verificationCode: string;
-  constructor(private window:WindowService,private conexion: ConexionService,private phoneCode:CodeAuthenticationService) { 
+  constructor(public window:WindowService,public conexion: ConexionService,public phoneCode:CodeAuthenticationService) { 
     this.conexion.listaUsuario().subscribe(usuario => {
       this.usuarios = usuario;
       console.log(this.usuarios);

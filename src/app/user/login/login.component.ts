@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
   onLogOut() {
     this.afAuth.auth.signOut();
   }
+  isError;
   usuarios: any;
   userAux: any;
   validarUsuario() {
