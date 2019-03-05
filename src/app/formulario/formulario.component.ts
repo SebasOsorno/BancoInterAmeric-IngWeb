@@ -23,7 +23,8 @@ export class FormularioComponent implements OnInit {
     residencia: '',
     direccion: '',
     paisMoneda:'',
-    uID:''
+    uID:'',
+    monto:'0'
   }
 
   verificationCode: string;

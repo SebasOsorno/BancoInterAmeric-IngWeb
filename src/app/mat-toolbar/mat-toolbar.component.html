@@ -1,11 +1,13 @@
 <mat-toolbar color="primary" style="min-height: 50px !important; height: 50px !important;">
-    <a mat-button [routerLink]="['/usuario']">Inicio</a>
-    <a mat-button [routerLink]="['/retiro']">Retiro</a>
-    <a mat-button [routerLink]="['/consignacion']">Consignación</a>
-    <a mat-button [routerLink]="['/transferencias']">Transferencias</a>
+    <div *ngIf=userLogin>
+        <a mat-button [routerLink]="['/usuario']">Inicio</a>
+        <a mat-button [routerLink]="['/retiro']">Retiro</a>
+        <a mat-button [routerLink]="['/consignacion']">Consignación</a>
+        <a mat-button [routerLink]="['/transferencias']">Transferencias</a>
+    </div>
     <span class="fill-space"></span>
-    <a mat-button [routerLink]="['/admin']">Vista Admin</a>
+    <a *ngIf=userAdmin mat-button [routerLink]="['/admin']">Vista Admin</a>
     <a mat-button [routerLink]="['/login']">login</a>
-    <a mat-button [routerLink]="['']">Cerrar Sesión</a>
+    <a mat-button (click)=signOut() >Cerrar Sesión</a>
 </mat-toolbar>
 <ng-content></ng-content>
